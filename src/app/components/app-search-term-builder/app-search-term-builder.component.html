@@ -1,0 +1,34 @@
+<div class="search-box">
+  <div class="close-btn">
+    <a (click)="onCloseClick()"><i class="material-icons">close</i></a>
+  </div>
+  <div>
+    <kendo-combobox
+      [data]="tags"
+      [textField]="'TagName'"
+      [valueField]="'TagID'"
+      [(ngModel)]="selectedTag"
+      (valueChange)="onTagChange($event)"
+    ></kendo-combobox>
+  </div>
+
+  <div>
+    <kendo-combobox
+      [data]="filterArray"
+      [textField]="'operator'"
+      [valueField]="'id'"
+      [(ngModel)]="filter"
+    ></kendo-combobox>
+  </div>
+
+  <div>
+    <kendo-combobox
+      [data]="tagValues"
+      [textField]="'Value'"
+      [valueField]="'id'"
+      [(ngModel)]="selectedTagValue"
+      (valueChange)="onTagValueChange($event)"
+    ></kendo-combobox>
+
+  </div>
+</div>

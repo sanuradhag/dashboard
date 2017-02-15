@@ -1,0 +1,27 @@
+<div>
+  <div>
+
+  </div>
+
+  <div>
+    <div *ngFor="let int of increaseCount(count);">
+      <app-search-term-builder
+      [tags]="tags"
+      (searchTerm)="getSearchTerm($event)"></app-search-term-builder>
+      <div>
+
+      </div>
+    </div>
+    <div class="search-btn">
+      <a (click)="onSearchClick()"><i class="material-icons">search</i></a>
+    </div>
+    <div class="add-condition-btn">
+      <a (click)="onAddNewCondition()"><i class="material-icons">add</i></a>
+    </div>
+  </div>
+
+  <div>
+
+  </div>
+
+</div>
