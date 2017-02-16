@@ -44,27 +44,27 @@ export class SearchService implements ISearchService {
       .map((filterArray) => [
         {
           id: 1,
-          operator: '<Equals>'
+          operator: 'Equals'
         },
         {
           id: 2,
-          operator: '<Does Not Equal>'
+          operator: 'Does Not Equal'
         },
         {
           id: 3,
-          operator: '<Begins With>'
+          operator: 'Begins With'
         },
         {
           id: 4,
-          operator: '<Ends With>'
+          operator: 'Ends With'
         },
         {
           id: 4,
-          operator: '<Contains>'
+          operator: 'Contains'
         },
         {
           id: 4,
-          operator: '<Does Not Contain>'
+          operator: 'Does Not Contain'
         }
       ])
   }

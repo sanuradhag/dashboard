@@ -20,6 +20,7 @@ export class AppSearch implements OnInit {
   public searchTerm: ISearchTerm;
   public searchTerms: ISearchTerm[];
   public isEdit: boolean;
+  public searchQuery: string;
 
   constructor(private searchService: SearchService) {
     this.tags = [];
@@ -27,6 +28,7 @@ export class AppSearch implements OnInit {
     this.searchTerm = null;
     this.searchTerms = [];
     this.isEdit = false;
+    this.searchQuery = '';
 
   }
 
@@ -39,7 +41,7 @@ export class AppSearch implements OnInit {
    * Sending search terms for the service.
    */
   public onSearchClick(): void {
-
+    this.searchQuery = this.buildSearchTerm();
   }
 
   /**
@@ -48,7 +50,6 @@ export class AppSearch implements OnInit {
    */
   public getSearchTerm(searchTerm: ISearchTerm): void {
     this.searchTerms.push(searchTerm);
-    console.log(this.searchTerms)
   }
 
   /**
@@ -58,7 +59,15 @@ export class AppSearch implements OnInit {
   public editSearchTerm(searchTerm: ISearchTerm): void {
     this.isEdit = true;
     this.searchTerm = searchTerm;
-    console.log('AppSearch');
+  }
+
+  /**
+   *
+   * @param searchTerm
+   */
+  public deleteSearchTerm(searchTerm: ISearchTerm): void {
+    let index: number = _.findIndex(this.searchTerms, searchTerm);
+    this.searchTerms.splice(index,1);
   }
 
   /**
@@ -68,14 +77,19 @@ export class AppSearch implements OnInit {
   public updateSearchTerm(object: ISearchTerm[]): void {
     let index: number = _.findIndex(this.searchTerms, object[0]);
     _.set(this.searchTerms, `[${index}]`, object[1]);
-    console.log(this.searchTerms)
+    this.isEdit = false;
   }
 
   /**
    * Responsible for building the search term.
    */
-  private buildSearchTerm(): void {
-
+  private buildSearchTerm(): string {
+    let data: string = '';
+    _.each(this.searchTerms, (searchTerm: ISearchTerm, index: number) => {
+      let logicalOperator: string = this.searchTerms[index + 1] ? `[${this.searchTerms[index + 1].logicalOperator.operator}]` : '';
+      data += `{@@${searchTerm.tag.TagName}!!<${searchTerm.operator.operator}>##${searchTerm.value.Value}}${logicalOperator}`;
+    });
+    return encodeURI(data);
   }
 
   /**

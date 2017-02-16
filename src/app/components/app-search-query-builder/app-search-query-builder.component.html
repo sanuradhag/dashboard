@@ -1,38 +1,55 @@
+<div class="container">
+  <form id="searchForm">
+    <div class="search-box row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <kendo-combobox class="form-control" name="tags" tabindex="1"
+                          [data]="tagList"
+                          [filterable]="true"
+                          [textField]="'TagName'"
+                          [valueField]="'TagID'"
+                          [(ngModel)]="selectedTag"
+                          (valueChange)="onTagChange($event)"
+                          (filterChange)="handleTagFilter($event)"
+                          required>
+          </kendo-combobox>
+        </div>
+      </div>
 
-<div class="search-box">
-  <div>
-    <kendo-combobox
-      [data]="tags"
-      [textField]="'TagName'"
-      [valueField]="'TagID'"
-      [(ngModel)]="selectedTag"
-      (valueChange)="onTagChange($event)"
-    ></kendo-combobox>
-  </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <kendo-combobox class="form-control" name="operators" tabindex="2"
+                          [data]="operatorsList"
+                          [filterable]="true"
+                          [textField]="'operator'"
+                          [valueField]="'id'"
+                          [(ngModel)]="selectedOperator"
+                          [disabled]="!selectedTag"
+                          (filterChange)="handleOperatorFilter($event)"
+                          required>
+          </kendo-combobox>
+        </div>
+      </div>
 
-  <div>
-    <kendo-combobox
-      [data]="operators"
-      [textField]="'operator'"
-      [valueField]="'id'"
-      [(ngModel)]="selectedOperator"
-    ></kendo-combobox>
-  </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <kendo-combobox class="form-control" name="tagValue" tabindex="3"
+                          [data]="tagValueList"
+                          [filterable]="true"
+                          [textField]="'Value'"
+                          [valueField]="'id'"
+                          [(ngModel)]="selectedTagValue"
+                          (valueChange)="onTagValueChange()"
+                          (filterChange)="handleTagValueFilter($event)"
+                          [disabled]="!selectedOperator"
+                          required>
+          </kendo-combobox>
+        </div>
+      </div>
 
-  <div>
-    <kendo-combobox id="tagValue"
-      [data]="tagValues"
-      [textField]="'Value'"
-      [valueField]="'id'"
-      [(ngModel)]="selectedTagValue"
-      (valueChange)="onTagValueChange()"
-    ></kendo-combobox>
-
-  </div>
-<div *ngIf="isEdit">
-  <a (click)="onDoneClick()"><i class="material-icons">done</i></a>
-</div>
-  <div *ngIf="selectedLogicalOperator">
-    <button (click)="toggleButtonState()">{{selectedLogicalOperator.operator}}</button>
-  </div>
+    </div>
+    <div *ngIf="isEdit">
+      <button class="btn btn-default" [disabled]="isDoneValid()" (click)="onDoneClick()"><i class="material-icons">done</i></button>
+    </div>
+  </form>
 </div>

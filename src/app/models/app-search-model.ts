@@ -24,5 +24,6 @@ export interface ISearchTerm {
   tag: ITag,
   operator: IOperator,
   value: ITagValue,
-  logicalOperator: IOperator
+  logicalOperator: IOperator,
+  index?: number
 }

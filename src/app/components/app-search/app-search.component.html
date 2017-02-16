@@ -13,22 +13,25 @@
       (updateSearchTerm)="updateSearchTerm($event)">
     </app-search-query-builder>
 
+    <div *ngFor="let term of searchTerms; let index = index;">
+      <app-search-term
+        [term]="term"
+        [index]="index"
+        (editSearchTerm)="editSearchTerm($event)"
+        (deleteSearchTerm)="deleteSearchTerm($event)">
+      </app-search-term>
+    </div>
+
     <div>
-      <div *ngFor="let term of searchTerms">
-        <app-search-term
-          [term]="term"
-          (editSearchTerm)="editSearchTerm($event)">
-        </app-search-term>
+      <div class="search-btn">
+        <button class="btn btn-default" [disabled]="searchTerms.length === 0"(click)="onSearchClick()"><i class="material-icons">search</i></button>
       </div>
     </div>
 
-  </div>
-
-  <div>
-    <div class="search-btn">
-      <a (click)="onSearchClick()"><i class="material-icons">search</i></a>
+    <div>
+      {{searchQuery}}
     </div>
-  </div>
 
+  </div>
 </div>
 
