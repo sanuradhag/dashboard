@@ -19,3 +19,10 @@ export interface IOperator {
   id: number
   operator: string
 }
+
+export interface ISearchTerm {
+  tag: ITag,
+  operator: IOperator,
+  value: ITagValue,
+  logicalOperator: IOperator
+}

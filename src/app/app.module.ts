@@ -8,7 +8,8 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import {SearchService} from "./services/app.search.service";
 import {AppSearch} from "./components/app-search/app-search.component";
 import {AppMain} from "./components/app-main/app-main";
-import {AppSearchTermBuilder} from "./components/app-search-term-builder/app-search-term-builder.component";
+import {AppSearchQueryBuilder} from "./components/app-search-query-builder/app-search-query-builder.component";
+import {AppSearchTerm} from "./components/app-search-term/app-search-term.component";
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { AppSidebarPanelComponent } from './components/app-sidebar-panel/app-sidebar-panel.component';
 
@@ -16,9 +17,10 @@ import { AppSidebarPanelComponent } from './components/app-sidebar-panel/app-sid
   declarations: [
     AppMain,
     AppSearch,
-    AppSearchTermBuilder,
+    AppSearchQueryBuilder,
+    AppSearchTerm,
     AppHeaderComponent,
-    AppSidebarPanelComponent,
+    AppSidebarPanelComponent
   ],
   imports: [
     BrowserModule,

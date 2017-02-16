@@ -1,0 +1,38 @@
+
+<div class="search-box">
+  <div>
+    <kendo-combobox
+      [data]="tags"
+      [textField]="'TagName'"
+      [valueField]="'TagID'"
+      [(ngModel)]="selectedTag"
+      (valueChange)="onTagChange($event)"
+    ></kendo-combobox>
+  </div>
+
+  <div>
+    <kendo-combobox
+      [data]="operators"
+      [textField]="'operator'"
+      [valueField]="'id'"
+      [(ngModel)]="selectedOperator"
+    ></kendo-combobox>
+  </div>
+
+  <div>
+    <kendo-combobox id="tagValue"
+      [data]="tagValues"
+      [textField]="'Value'"
+      [valueField]="'id'"
+      [(ngModel)]="selectedTagValue"
+      (valueChange)="onTagValueChange()"
+    ></kendo-combobox>
+
+  </div>
+<div *ngIf="isEdit">
+  <a (click)="onDoneClick()"><i class="material-icons">done</i></a>
+</div>
+  <div *ngIf="selectedLogicalOperator">
+    <button (click)="toggleButtonState()">{{selectedLogicalOperator.operator}}</button>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import * as _ from "lodash";
+import * as _ from 'lodash'
 
 import {SearchService} from "../../services/app.search.service";
-import {ITag, ITagValue, IOperator} from "../../models/app-search-model";
+import {ITag, IOperator, ISearchTerm} from "../../models/app-search-model";
 
 @Component({
   moduleId: module.id,
@@ -16,17 +16,23 @@ import {ITag, ITagValue, IOperator} from "../../models/app-search-model";
 export class AppSearch implements OnInit {
 
   public tags: ITag[];
-  public count: number;
-  public searchTerm: string;
+  public operators: IOperator[];
+  public searchTerm: ISearchTerm;
+  public searchTerms: ISearchTerm[];
+  public isEdit: boolean;
 
   constructor(private searchService: SearchService) {
     this.tags = [];
-    this.count = 1;
-    this.searchTerm = '';
+    this.operators = [];
+    this.searchTerm = null;
+    this.searchTerms = [];
+    this.isEdit = false;
+
   }
 
   ngOnInit() {
     this.loadTags();
+    this.loadOperators();
   }
 
   /**
@@ -37,17 +43,33 @@ export class AppSearch implements OnInit {
   }
 
   /**
-   * Add a new Search term component to the search term builder component list.
+   * Getting the search term from the search query builder
+   * @param data - searchTerm
    */
-  public onAddNewCondition(): void {
-    this.count++;
+  public getSearchTerm(searchTerm: ISearchTerm): void {
+    this.searchTerms.push(searchTerm);
+    console.log(this.searchTerms)
   }
 
-  public getSearchTerm(data): void {
-    this.searchTerm += data;
-    console.log('Term' + this.searchTerm);
+  /**
+   *
+   * @param searchTerm
+   */
+  public editSearchTerm(searchTerm: ISearchTerm): void {
+    this.isEdit = true;
+    this.searchTerm = searchTerm;
+    console.log('AppSearch');
   }
 
+  /**
+   * Updating a specific search term in the search term list.
+   * @param object - this contains the value to be updated and it's previous value.
+   */
+  public updateSearchTerm(object: ISearchTerm[]): void {
+    let index: number = _.findIndex(this.searchTerms, object[0]);
+    _.set(this.searchTerms, `[${index}]`, object[1]);
+    console.log(this.searchTerms)
+  }
 
   /**
    * Responsible for building the search term.
@@ -69,16 +91,14 @@ export class AppSearch implements OnInit {
   }
 
   /**
-   * Helper function for looping the component.
-   * @returns {number[]} -  a number array with n x count number of elements.
+   * Responsible for calling search service to get all the operators.
    */
-  private increaseCount(): number[] {
-    let array: number[] = [];
-    for(let i = 0; i < this.count; ++i) {
-      array.push(i+1)
-    }
-    return array;
+  private loadOperators(): void {
+    this.searchService.getOperators()
+      .subscribe(
+        operators => this.operators = operators,
+        err =>
+          console.log(err)
+      );
   }
-
-
 }

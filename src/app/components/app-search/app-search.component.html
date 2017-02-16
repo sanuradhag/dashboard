@@ -4,24 +4,31 @@
   </div>
 
   <div>
-    <div *ngFor="let int of increaseCount(count);">
-      <app-search-term-builder
+    <app-search-query-builder
       [tags]="tags"
-      (searchTerm)="getSearchTerm($event)"></app-search-term-builder>
-      <div>
+      [operators]="operators"
+      [searchTerm]="searchTerm"
+      [isEdit]="isEdit"
+      (getSearchTerm)="getSearchTerm($event)"
+      (updateSearchTerm)="updateSearchTerm($event)">
+    </app-search-query-builder>
 
+    <div>
+      <div *ngFor="let term of searchTerms">
+        <app-search-term
+          [term]="term"
+          (editSearchTerm)="editSearchTerm($event)">
+        </app-search-term>
       </div>
     </div>
-    <div class="search-btn">
-      <a (click)="onSearchClick()"><i class="material-icons">search</i></a>
-    </div>
-    <div class="add-condition-btn">
-      <a (click)="onAddNewCondition()"><i class="material-icons">add</i></a>
-    </div>
+
   </div>
 
   <div>
-
+    <div class="search-btn">
+      <a (click)="onSearchClick()"><i class="material-icons">search</i></a>
+    </div>
   </div>
 
 </div>
+
