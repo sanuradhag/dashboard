@@ -1,0 +1,49 @@
+@import '_mixin';
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+.btn {
+  margin: 0;
+  padding: 0;
+}
+
+
+.main-container {
+  padding: 30px;
+}
+
+.mbadge {
+  @include border-radius(15%);
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 300;
+  height: 20px;
+  line-height: 1;
+  min-width: 20px;
+  padding: 4px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.circle {
+  @include border-radius(50%);
+}

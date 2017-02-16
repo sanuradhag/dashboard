@@ -1,0 +1,12 @@
+@import '../../src/app/styles/_flaticon';
+@import '../../src/app/styles/_global';
+@import '../../src/app/styles/_mixin';
+@import '../../src/app/styles/_themes';
+@import '../../src/app/styles/_variables';
+
+@import '../app/components/app-main/_app-main';
+@import '../app/components/app-header/_app-header.component';
+@import '../app/components/app-search/_app-search.component';
+@import '../app/components/app-search-result/_app-search-result.component';
+@import '../app/components/app-sidebar-panel/_app-sidebar-panel.component';
+@import '../app/components/app-search-term-builder/_app-search-term-builder.component';

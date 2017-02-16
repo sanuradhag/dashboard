@@ -9,12 +9,16 @@ import {SearchService} from "./services/app.search.service";
 import {AppSearch} from "./components/app-search/app-search.component";
 import {AppMain} from "./components/app-main/app-main";
 import {AppSearchTermBuilder} from "./components/app-search-term-builder/app-search-term-builder.component";
+import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { AppSidebarPanelComponent } from './components/app-sidebar-panel/app-sidebar-panel.component';
 
 @NgModule({
   declarations: [
     AppMain,
     AppSearch,
-    AppSearchTermBuilder
+    AppSearchTermBuilder,
+    AppHeaderComponent,
+    AppSidebarPanelComponent,
   ],
   imports: [
     BrowserModule,

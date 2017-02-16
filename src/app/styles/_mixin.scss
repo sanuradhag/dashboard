@@ -1,0 +1,119 @@
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin font-size($size: 1.6, $line: $size * 1.5) {
+  font-size:  ($size * 10) + px;
+  font-size:  $size + rem;
+  line-height: ($line * 10) + px;
+  line-height: $line + rem;
+}
+
+@mixin breakpoint($point) {
+  @if $point == max1223 {
+    @media only screen and (max-width: 1223px) {
+      @content;
+    }
+  } @else if $point == max991 {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
+  }
+}
+
+@mixin background-opacity($color, $opacity) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin background($imgpath, $repeat: no-repeat) {
+  background: {
+    image: url($imgpath);
+    repeat: $repeat;
+  }
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin wrap-text($fontsize, $lineheight, $nooflines) {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $nooflines;
+  display: -webkit-box;
+  font-size: $fontsize;
+  height: $fontsize * $nooflines * $lineheight + rem;
+  line-height: $lineheight + rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  -webkit-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scalex, $scaley) {
+  @include transform(scale($scalex, $scaley));
+}
+
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin size($value) {
+  $width: nth($value, 1);
+  $height: $width;
+
+  @if length($value) > 1 {
+    $height: nth($value, 2);
+  }
+
+  @if is-size($height) {
+    height: $height;
+  } @else {
+    //@warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin.";
+  }
+
+  @if is-size($width) {
+    width: $width;
+  } @else {
+    //@warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin.";
+  }
+}

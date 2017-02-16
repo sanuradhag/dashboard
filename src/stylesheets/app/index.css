@@ -1,0 +1,452 @@
+@font-face {
+  font-family: 'Flaticon';
+  src: url("../../assets/fonts/Flaticon.eot");
+  src: url("../../assets/fonts/Flaticon.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Flaticon.woff") format("woff"), url("../../assets/fonts/Flaticon.ttf") format("truetype"), url("../../assets/fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: 'Flaticon';
+    src: url("../../assets/fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+/* line 19, ../../app/styles/_flaticon.scss */
+[class^='flaticon-']:before, [class*=' flaticon-']:before,
+[class^='flaticon-']:after, [class*=' flaticon-']:after {
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+}
+
+/* line 26, ../../app/styles/_flaticon.scss */
+.flaticon-arrow-point-to-right:before {
+  content: "\f100";
+}
+
+/* line 27, ../../app/styles/_flaticon.scss */
+.flaticon-arrows:before {
+  content: "\f101";
+}
+
+/* line 28, ../../app/styles/_flaticon.scss */
+.flaticon-bar-code-scanner:before {
+  content: "\f102";
+}
+
+/* line 29, ../../app/styles/_flaticon.scss */
+.flaticon-barcode-scanner:before {
+  content: "\f103";
+}
+
+/* line 30, ../../app/styles/_flaticon.scss */
+.flaticon-barcode-scanner-1:before {
+  content: "\f104";
+}
+
+/* line 31, ../../app/styles/_flaticon.scss */
+.flaticon-clock-circular-outline:before {
+  content: "\f105";
+}
+
+/* line 32, ../../app/styles/_flaticon.scss */
+.flaticon-close:before {
+  content: "\f106";
+}
+
+/* line 33, ../../app/styles/_flaticon.scss */
+.flaticon-database:before {
+  content: "\f107";
+}
+
+/* line 34, ../../app/styles/_flaticon.scss */
+.flaticon-edit:before {
+  content: "\f108";
+}
+
+/* line 35, ../../app/styles/_flaticon.scss */
+.flaticon-folder:before {
+  content: "\f109";
+}
+
+/* line 36, ../../app/styles/_flaticon.scss */
+.flaticon-frame-landscape:before {
+  content: "\f10a";
+}
+
+/* line 37, ../../app/styles/_flaticon.scss */
+.flaticon-full-battery:before {
+  content: "\f10b";
+}
+
+/* line 38, ../../app/styles/_flaticon.scss */
+.flaticon-keyboard-right-arrow-button:before {
+  content: "\f10c";
+}
+
+/* line 39, ../../app/styles/_flaticon.scss */
+.flaticon-link-symbol:before {
+  content: "\f10d";
+}
+
+/* line 40, ../../app/styles/_flaticon.scss */
+.flaticon-menu:before {
+  content: "\f10e";
+}
+
+/* line 41, ../../app/styles/_flaticon.scss */
+.flaticon-menu-1:before {
+  content: "\f10f";
+}
+
+/* line 42, ../../app/styles/_flaticon.scss */
+.flaticon-pie-chart-outline:before {
+  content: "\f110";
+}
+
+/* line 43, ../../app/styles/_flaticon.scss */
+.flaticon-plus-symbol:before {
+  content: "\f111";
+}
+
+/* line 44, ../../app/styles/_flaticon.scss */
+.flaticon-profile:before {
+  content: "\f112";
+}
+
+/* line 45, ../../app/styles/_flaticon.scss */
+.flaticon-refresh-page-arrow-button:before {
+  content: "\f113";
+}
+
+/* line 46, ../../app/styles/_flaticon.scss */
+.flaticon-repairing-service:before {
+  content: "\f114";
+}
+
+/* line 47, ../../app/styles/_flaticon.scss */
+.flaticon-round-error-symbol:before {
+  content: "\f115";
+}
+
+/* line 48, ../../app/styles/_flaticon.scss */
+.flaticon-search:before {
+  content: "\f116";
+}
+
+/* line 49, ../../app/styles/_flaticon.scss */
+.flaticon-search-1:before {
+  content: "\f117";
+}
+
+/* line 50, ../../app/styles/_flaticon.scss */
+.flaticon-secret-agent:before {
+  content: "\f118";
+}
+
+/* line 51, ../../app/styles/_flaticon.scss */
+.flaticon-settings-gears:before {
+  content: "\f119";
+}
+
+/* line 52, ../../app/styles/_flaticon.scss */
+.flaticon-signal-bars:before {
+  content: "\f11a";
+}
+
+/* line 53, ../../app/styles/_flaticon.scss */
+.flaticon-sound:before {
+  content: "\f11b";
+}
+
+/* line 54, ../../app/styles/_flaticon.scss */
+.flaticon-tag:before {
+  content: "\f11c";
+}
+
+/* line 55, ../../app/styles/_flaticon.scss */
+.flaticon-technology:before {
+  content: "\f11d";
+}
+
+/* line 56, ../../app/styles/_flaticon.scss */
+.flaticon-technology-1:before {
+  content: "\f11e";
+}
+
+/* line 57, ../../app/styles/_flaticon.scss */
+.flaticon-up-and-down-opposite-arrows-symbol-side-by-side:before {
+  content: "\f11f";
+}
+
+/* line 58, ../../app/styles/_flaticon.scss */
+.flaticon-wifi-connection-signal-symbol:before {
+  content: "\f120";
+}
+
+/* line 59, ../../app/styles/_flaticon.scss */
+.flaticon-wireless-router:before {
+  content: "\f121";
+}
+
+/* line 3, ../../app/styles/_global.scss */
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 12, ../../app/styles/_global.scss */
+html {
+  font-size: 100%;
+}
+
+/* line 16, ../../app/styles/_global.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+/* line 21, ../../app/styles/_global.scss */
+h1,
+h2,
+h3,
+.btn {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 30, ../../app/styles/_global.scss */
+.main-container {
+  padding: 30px;
+}
+
+/* line 34, ../../app/styles/_global.scss */
+.mbadge {
+  -moz-border-radius: 15%;
+  -ms-border-radius: 15%;
+  -webkit-border-radius: 15%;
+  border-radius: 15%;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 300;
+  height: 20px;
+  line-height: 1;
+  min-width: 20px;
+  padding: 4px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* line 47, ../../app/styles/_global.scss */
+.circle {
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*Default Theme Variables*/
+/*@import '../../styles/_themes';
+@import '../../styles/_variables';
+@import '../../styles/mixin';*/
+/* line 7, ../../app/components/app-header/_app-header.component.scss */
+header .navbar {
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0;
+  display: flex;
+  height: 70px;
+  padding: 0;
+  width: 100%;
+}
+/* line 16, ../../app/components/app-header/_app-header.component.scss */
+header .navbar.navbar-style {
+  background-color: #407de1;
+}
+/* line 19, ../../app/components/app-header/_app-header.component.scss */
+.default header .navbar.navbar-style {
+  background-color: #407de1;
+}
+/* line 26, ../../app/components/app-header/_app-header.component.scss */
+header .nav-toggle {
+  cursor: pointer;
+  height: 100%;
+  text-align: center;
+  width: 70px;
+}
+/* line 32, ../../app/components/app-header/_app-header.component.scss */
+header .nav-toggle.nav-toggle-btn {
+  font-size: 17.5px;
+  font-size: 1.75rem;
+  line-height: 42px;
+  line-height: 4.2rem;
+  background-color: #565656;
+  color: #fff;
+}
+/* line 40, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-brand {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  height: 100%;
+}
+/* line 46, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-brand h1 {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 35px;
+  line-height: 3.5rem;
+}
+/* line 50, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-brand h3 {
+  font-size: 9.5px;
+  font-size: 0.95rem;
+  line-height: 21px;
+  line-height: 2.1rem;
+  font-weight: 200;
+  padding: 7px 0 0 10px;
+}
+/* line 58, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav {
+  height: 100%;
+}
+/* line 61, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav.user-menu {
+  margin-right: 12px;
+  position: absolute;
+  right: 0;
+}
+/* line 68, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav li.nav-item {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0 !important;
+  max-width: 55px;
+  min-width: 55px;
+  text-align: center;
+}
+/* line 79, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav li .nav-link {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 28px;
+  line-height: 2.8rem;
+  color: #fff;
+  height: inherit;
+  width: 100%;
+}
+/* line 85, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav li .nav-link:hover {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+}
+/* line 89, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav li .nav-link i {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 94, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav li .nav-link .mbadge {
+  background-color: #d04e50;
+  border: 1px solid #fff;
+  color: #fff;
+  margin-left: -5px;
+  position: absolute;
+  top: 50%;
+}
+/* line 103, ../../app/components/app-header/_app-header.component.scss */
+header .navbar-nav li .nav-link.profile-image {
+  background-image: url("../../../assets/images/user.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 2px solid #fff;
+  height: 40px;
+  width: 40px;
+}
+
+/* line 1, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper {
+  -moz-box-shadow: 2px 0 6px 0 rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 2px 0 6px 0 rgba(0, 0, 0, 0.38);
+  box-shadow: 2px 0 6px 0 rgba(0, 0, 0, 0.38);
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #fff;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  width: 255px;
+  z-index: 1;
+}
+/* line 13, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 17, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper ul li {
+  list-style-type: none;
+  height: auto;
+  padding: 10px 20px;
+  width: 100%;
+}
+/* line 24, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper ul li:first-child:hover {
+  box-shadow: none !important;
+}
+/* line 29, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper ul li:hover {
+  -moz-box-shadow: inset 0 0 15px 2px rgba(40, 80, 140, 0.7);
+  -webkit-box-shadow: inset 0 0 15px 2px rgba(40, 80, 140, 0.7);
+  box-shadow: inset 0 0 15px 2px rgba(40, 80, 140, 0.7);
+  background-color: #407de1;
+}
+/* line 33, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper ul li:hover a {
+  color: #fff;
+  font-weight: 700;
+}
+/* line 39, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper ul li a {
+  font-size: 9px;
+  font-size: 0.9rem;
+  line-height: 18px;
+  line-height: 1.8rem;
+  color: #565656;
+  font-weight: 300;
+  text-decoration: none;
+}
+/* line 45, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper ul li a i {
+  font-size: 1.1rem;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+/* line 55, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper .sidebar-brand {
+  background-image: url("../../../assets/images/logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70% 70%;
+  cursor: pointer;
+  height: 70px;
+  width: 100%;
+}
+/* line 63, ../../app/components/app-sidebar-panel/_app-sidebar-panel.component.scss */
+.sidebar-wrapper .sidebar-brand:hover {
+  background-color: transparent;
+}

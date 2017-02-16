@@ -1,0 +1,115 @@
+/*@import '../../styles/_themes';
+@import '../../styles/_variables';
+@import '../../styles/mixin';*/
+
+
+header {
+  .navbar {
+    @include border-radius(0);
+    border: 0;
+    box-shadow: 0;
+    display: flex;
+    height: 70px;
+    padding: 0;
+    width: 100%;
+
+    &.navbar-style {
+      background-color: $header-color;
+      @each $theme, $map in $themes {
+        .#{$theme} & {
+          background-color: map-get($map, header-color);
+        }
+      }
+    }
+  }
+
+  .nav-toggle {
+    cursor: pointer;
+    height: 100%;
+    text-align: center;
+    width: 70px;
+
+    &.nav-toggle-btn {
+      @include font-size(1.75, 4.2);
+      background-color: $text-color;
+      color: $primary-white;
+    }
+
+  }
+
+  .navbar-brand {
+    align-items: center;
+    color: $primary-white;
+    display: flex;
+    height: 100%;
+
+    h1 {
+      @include font-size(1.5, 3.5);
+    }
+
+    h3 {
+      @include font-size(.95, 2.1);
+      font-weight: 200;
+      padding: 7px 0 0 10px;
+    }
+
+  }
+
+  .navbar-nav {
+    height: 100%;
+
+    &.user-menu {
+      margin-right: 12px;
+      position: absolute;
+      right: 0;
+    }
+
+    li {
+      &.nav-item {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        margin: 0 !important;
+        max-width: 55px;
+        min-width: 55px;
+        text-align: center;
+      }
+
+      .nav-link {
+        @include font-size(1.4, 2.8);
+        color: $primary-white;
+        height: inherit;
+        width: 100%;
+
+        &:hover {
+          @include background-opacity($primary-white, .5);
+        }
+
+        i {
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .mbadge {
+          background-color: $primary-red;
+          border: 1px solid $primary-white;
+          color: $primary-white;
+          margin-left: -5px;
+          position: absolute;
+          top: 50%;
+        }
+
+        &.profile-image {
+          @include background('../../../assets/images/user.jpg');
+          background-size: contain;
+          border: 2px solid $primary-white;
+          height: 40px;
+          width: 40px;
+        }
+
+      }
+    }
+  }
+
+}
