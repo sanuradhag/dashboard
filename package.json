@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.20",
+    "@progress/kendo-angular-buttons": "^0.20.1",
     "@progress/kendo-angular-dropdowns": "^0.28.1",
     "@progress/kendo-theme-default": "^2.11.25",
     "@types/lodash": "^4.14.52",

@@ -23,8 +23,11 @@
     </div>
 
     <div>
-      <div class="search-btn">
-        <button class="btn btn-default" [disabled]="searchTerms.length === 0"(click)="onSearchClick()"><i class="material-icons">search</i></button>
+      <div class="search-btn pull-right">
+        <button routerLink="/search-results" class="btn btn-default" [disabled]="searchTerms.length === 0"(click)="onSearchClick()"><i class="material-icons">search</i></button>
+      </div>
+      <div class="search-btn pull-right">
+        <button class="btn btn-default" [disabled]="searchTerms.length === 0"(click)="resetSearch()"><i class="material-icons">cached</i></button>
       </div>
     </div>
 

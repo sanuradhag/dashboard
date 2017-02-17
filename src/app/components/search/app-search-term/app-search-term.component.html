@@ -1,0 +1,27 @@
+<div>
+  <kendo-buttongroup *ngIf="term.logicalOperator && term.index !== 0" class="btn-group">
+    <button  class="btn-default" kendoButton [selected]="andToggleState" (click)="toggleANDOperator()" [togglable]="toggleState">
+      AND
+    </button>
+    <button class="btn-default" kendoButton [selected]="orToggleState" (click)="toggleOROperator()" [togglable]="toggleState">
+      OR
+    </button>
+  </kendo-buttongroup>
+  <div class="row">
+    <div class="col-md-3">
+      {{term.tag.TagName}}
+    </div>
+
+    <div class="col-md-3">
+      {{term.operator.operator}}
+    </div>
+
+    <div class="col-md-3">
+      {{term.value.Value}}
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-default" (click)="onEditClick()"><i class="material-icons">mode_edit</i></button>
+      <button class="btn btn-default" (click)="onDeleteClick()"><i class="material-icons">close</i></button>
+    </div>
+  </div>
+</div>
