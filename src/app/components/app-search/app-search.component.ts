@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import * as _ from 'lodash'
 
-import {SearchService} from "../../../services/app.search.service";
-import {ITag, IOperator, ISearchTerm} from "../../../models/app-search-model";
+import {ITag, IOperator, ISearchTerm} from "../../models/app-search-model";
+import {SearchService} from "../../services/app.search.service";
 
 @Component({
   moduleId: module.id,

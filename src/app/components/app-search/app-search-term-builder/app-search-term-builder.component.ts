@@ -14,30 +14,30 @@ import {SearchService} from "../../../services/app.search.service";
  */
 export class AppSearchTermBuilder implements OnChanges {
 
-  public tagList: ITag[];
-  public _tagList: ITag[];
-  public tagValueList: ITagValue[];
-  public operatorsList: IOperator[];
-  public _operatorsList: IOperator[];
+  public filteredTagList: ITag[];
+  public filteredTagValueList: ITagValue[];
+  public filteredOperatorsList: IOperator[];
   public searchData: ISearchTerm;
-  public tagValues: ITagValue[];
+  private tagList: ITag[];
+  private operatorsList: IOperator[];
+  private tagValues: ITagValue[];
 
   @Input('tags') set tags(tags: ITag[]) {
-    this._tagList = tags.slice();
     this.tagList = tags.slice();
+    this.filteredTagList = tags.slice();
   };
 
   get tags(): ITag[] {
-    return this._tagList;
+    return this.tagList;
   }
 
-  @Input() set operators(operators: IOperator[]) {
-    this._operatorsList = operators;
+  @Input('operators') set operators(operators: IOperator[]) {
     this.operatorsList = operators;
+    this.filteredOperatorsList = operators;
   };
 
   get operators(): IOperator[] {
-    return this._operatorsList;
+    return this.operatorsList;
   }
 
   @Input() searchTerm: ISearchTerm;
@@ -92,27 +92,27 @@ export class AppSearchTermBuilder implements OnChanges {
   }
 
   /**
-   * This method will be triggered when the tag dropdown filterChange event is fired
+   * This method will be triggered when the tag dropdown filterChange event is fired.
    * @param value
    */
   public handleTagFilter(value) {
-    this.tagList = this.tags.filter((tag) => tag.TagName.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+    this.filteredTagList = this.tags.filter((tag) => tag.TagName.toLowerCase().indexOf(value.toLowerCase()) !== -1);
   }
 
   /**
-   * This method will be triggered when the operator dropdown filterChange event is fired
+   * This method will be triggered when the operator dropdown filterChange event is fired.
    * @param value
    */
   public handleOperatorFilter(value) {
-    this.operatorsList = this.operators.filter((operator) => operator.operator.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+    this.filteredOperatorsList = this.operators.filter((operator) => operator.operator.toLowerCase().indexOf(value.toLowerCase()) !== -1);
   }
 
   /**
-   * This method will be triggered when the tag value dropdown filterChange event is fired
+   * This method will be triggered when the tag value dropdown filterChange event is fired.
    * @param value
    */
   public handleTagValueFilter(value) {
-    this.tagValueList = this.tagValues.filter((tagValue) => tagValue.Value.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+    this.filteredTagValueList = this.tagValues.filter((tagValue) => tagValue.Value.toLowerCase().indexOf(value.toLowerCase()) !== -1);
   }
 
   /**
@@ -160,7 +160,7 @@ export class AppSearchTermBuilder implements OnChanges {
     this.searchService.getTagValue(id).subscribe(
       tagValues => {
         this.tagValues = tagValues;
-        this.tagValueList = this.tagValues.slice();
+        this.filteredTagValueList = this.tagValues.slice();
       }
     );
 

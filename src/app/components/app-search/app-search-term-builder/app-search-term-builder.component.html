@@ -4,7 +4,7 @@
       <div class="col-md-4">
         <div class="form-group">
           <kendo-combobox class="form-control" name="tags" tabindex="1"
-                          [data]="tagList"
+                          [data]="filteredTagList"
                           [filterable]="true"
                           [textField]="'TagName'"
                           [valueField]="'TagID'"
@@ -19,7 +19,7 @@
       <div class="col-md-4">
         <div class="form-group">
           <kendo-combobox class="form-control" name="operators" tabindex="2"
-                          [data]="operatorsList"
+                          [data]="filteredOperatorsList"
                           [filterable]="true"
                           [textField]="'operator'"
                           [valueField]="'id'"
@@ -34,7 +34,7 @@
       <div class="col-md-4">
         <div class="form-group">
           <kendo-combobox class="form-control" name="tagValue" tabindex="3"
-                          [data]="tagValueList"
+                          [data]="filteredTagValueList"
                           [filterable]="true"
                           [textField]="'Value'"
                           [valueField]="'id'"
@@ -47,9 +47,11 @@
         </div>
       </div>
 
+
     </div>
     <div *ngIf="isEdit">
-      <button class="btn btn-default" [disabled]="isDoneValid()" (click)="onDoneClick()"><i class="material-icons">done</i></button>
+      <button class="btn btn-default" [disabled]="isDoneValid()" (click)="onDoneClick()"><i
+        class="material-icons">done</i></button>
     </div>
   </form>
 </div>
