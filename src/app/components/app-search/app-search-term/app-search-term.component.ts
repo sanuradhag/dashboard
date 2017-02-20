@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter, OnChanges} from '@angular/core';
-import {ISearchTerm} from "../../../models/app-search-model";
+import {ISearchTerm} from "../shared/app-search-model";
 
 @Component({
   moduleId: module.id,

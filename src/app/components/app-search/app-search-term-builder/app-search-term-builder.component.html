@@ -52,6 +52,8 @@
     <div *ngIf="isEdit">
       <button class="btn btn-default" [disabled]="isDoneValid()" (click)="onDoneClick()"><i
         class="material-icons">done</i></button>
+      <button class="btn btn-default" (click)="onCloseClick()"><i
+        class="material-icons">close</i></button>
     </div>
   </form>
 </div>

@@ -10,7 +10,8 @@
       [searchTerm]="searchTerm"
       [isEdit]="isEdit"
       (getSearchTerm)="getSearchTerm($event)"
-      (updateSearchTerm)="updateSearchTerm($event)">
+      (updateSearchTerm)="updateSearchTerm($event)"
+      (setEditState)="setEditState($event)">
     </app-search-query-builder>
 
     <div *ngFor="let term of searchTerms; let index = index;">
@@ -24,7 +25,7 @@
 
     <div>
       <div class="search-btn pull-right">
-        <button routerLink="/search-results" class="btn btn-default" [disabled]="searchTerms.length === 0"(click)="onSearchClick()"><i class="material-icons">search</i></button>
+        <button routerLink="/search-results"class="btn btn-default" [disabled]="searchTerms.length === 0"(click)="onSearchClick()"><i class="material-icons">search</i></button>
       </div>
       <div class="search-btn pull-right">
         <button class="btn btn-default" [disabled]="searchTerms.length === 0"(click)="resetSearch()"><i class="material-icons">cached</i></button>

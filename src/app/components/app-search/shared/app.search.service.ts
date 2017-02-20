@@ -1,9 +1,9 @@
-import {Injectable, Inject} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import {ITag, ITagValue, IOperator} from "../models/app-search-model";
+import {ITag, ITagValue, IOperator} from "../shared/app-search-model";
 
 export interface ISearchService {
   getTags(): Observable<ITag[]>;

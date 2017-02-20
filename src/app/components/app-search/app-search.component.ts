@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import * as _ from 'lodash'
 
-import {ITag, IOperator, ISearchTerm} from "../../models/app-search-model";
-import {SearchService} from "../../services/app.search.service";
-
+import {ITag, IOperator, ISearchTerm} from "../app-search/shared/app-search-model";
+import {SearchService} from "../app-search/shared/app.search.service";
 @Component({
   moduleId: module.id,
   selector: 'app-search',
@@ -52,21 +51,33 @@ export class AppSearch implements OnInit {
     this.searchTerms.push(searchTerm);
   }
 
+  /**
+   * Reset the searchTerm data.
+   */
   public resetSearch():  void {
     this.searchTerms = [];
   }
 
   /**
-   *
+   *Setting the isEdit varible true and passing the search term for updating to a child component.
    * @param searchTerm
    */
   public editSearchTerm(searchTerm: ISearchTerm): void {
+    debugger;
     this.isEdit = true;
     this.searchTerm = searchTerm;
   }
 
   /**
-   *
+   * Change the edit state of the child component.
+   * @param isEdit
+   */
+  public setEditState(isEdit: boolean): void {
+    this.isEdit = isEdit;
+  }
+
+  /**
+   * Deleting the selected search term from the search term list.
    * @param searchTerm
    */
   public deleteSearchTerm(searchTerm: ISearchTerm): void {

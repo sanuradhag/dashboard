@@ -1,8 +1,8 @@
 import {Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
 import * as _ from 'lodash'
 
-import {ITag, ITagValue, IOperator, ISearchTerm} from "../../../models/app-search-model";
-import {SearchService} from "../../../services/app.search.service";
+import {ITag, ITagValue, IOperator, ISearchTerm} from "../shared/app-search-model";
+import {SearchService} from "../shared/app.search.service";
 
 @Component({
   moduleId: module.id,
@@ -42,6 +42,7 @@ export class AppSearchTermBuilder implements OnChanges {
 
   @Input() searchTerm: ISearchTerm;
   @Input() isEdit: boolean;
+  @Output() setEditState: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() getSearchTerm: EventEmitter<ISearchTerm> = new EventEmitter<ISearchTerm>();
   @Output() updateSearchTerm: EventEmitter<ISearchTerm[]> = new EventEmitter<ISearchTerm[]>();
 
@@ -56,6 +57,7 @@ export class AppSearchTermBuilder implements OnChanges {
   }
 
   ngOnChanges() {
+    debugger;
     if (this.isEdit) {
       this.cloneData();
       this.getTagValue(this.searchData.tag.TagID);
@@ -134,7 +136,21 @@ export class AppSearchTermBuilder implements OnChanges {
     this.updateSearchTerm.emit(array);
 
     this.clearData();
-    this.isEdit = false;
+    this.setEditState.emit(false);
+  }
+
+  /**
+   * This method will close the current search term builder.
+   */
+  public onCloseClick(): void {
+    this.searchData ={
+      tag: null,
+      operator: null,
+      value: null,
+      logicalOperator: null,
+      index: null
+    };
+    this.setEditState.emit(false);
   }
 
   /**
