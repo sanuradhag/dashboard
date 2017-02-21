@@ -59,10 +59,15 @@
     cursor: pointer;
     height: 70px;
     width: 100%;
-
+  
     &:hover {
       background-color: transparent;
     }
+    
   }
-
 }
+.sidebar-nav
+    {
+      width:100%;
+    }
+

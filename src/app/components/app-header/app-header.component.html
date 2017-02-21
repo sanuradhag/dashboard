@@ -1,6 +1,9 @@
 <header>
-  <nav class="navbar navbar-fixed navbar-style">
-    <div class="nav-toggle nav-toggle-btn" onclick="openNav();"><i class="flaticon-menu-1"></i></div>
+  <nav  class="navbar navbar-fixed navbar-style">
+   <app-sidebar-panel  #child></app-sidebar-panel>
+    <div class="nav-toggle nav-toggle-btn" (click)= "child.showElement = true"  (clickOutside)="child.showElement = false"><i class="flaticon-menu-1"></i></div>
+
+    
     <a class="navbar-brand" href="#">
       <h1>MATRIX24x7</h1>
       <h3>Configurator</h3>

@@ -9,7 +9,7 @@ import {AppDeviceList} from "./components/device-list/app-device-list/app-device
 import {SearchModule} from "./components/app-search/app-search.module";
 import {SharedModule} from "./components/shared/shared.module";
 import {appRoutes} from "./app-routes";
-
+import { ClickOutsideModule } from "ng-click-outside";
 @NgModule({
   declarations: [
     AppMain,
@@ -21,7 +21,8 @@ import {appRoutes} from "./app-routes";
   imports: [
     SharedModule,
     RouterModule.forRoot(appRoutes),
-    SearchModule
+    SearchModule,
+    ClickOutsideModule
   ],
   providers: [],
   bootstrap: [AppMain]
