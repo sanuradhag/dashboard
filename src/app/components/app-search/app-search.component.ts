@@ -102,7 +102,7 @@ export class AppSearch implements OnInit {
     let data: string = '';
     _.each(this.searchTerms, (searchTerm: ISearchTerm, index: number) => {
       let logicalOperator: string = this.searchTerms[index + 1] ? `[${this.searchTerms[index + 1].logicalOperator.operator}]` : '';
-      data += `{@@${searchTerm.tag.TagName}!!<${searchTerm.operator.operator}>##${searchTerm.value.Value}}${logicalOperator}`;
+      data += `{@@${searchTerm.tag.tagName}!!<${searchTerm.operator.operator}>##${searchTerm.value}}${logicalOperator}`;
     });
     return encodeURI(data);
   }

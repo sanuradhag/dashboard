@@ -1,7 +1,7 @@
 import {Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
 import * as _ from 'lodash'
 
-import {ITag, ITagValue, IOperator, ISearchTerm} from "../shared/app-search-model";
+import {ITag, IOperator, ISearchTerm} from "../shared/app-search-model";
 import {SearchService} from "../shared/app.search.service";
 
 @Component({
@@ -15,23 +15,23 @@ import {SearchService} from "../shared/app.search.service";
 export class AppSearchTermBuilder implements OnChanges {
 
   public filteredTagList: ITag[];
-  public filteredTagValueList: ITagValue[];
+  public filteredTagValueList: string[];
   public filteredOperatorsList: IOperator[];
   public searchData: ISearchTerm;
   private tagList: ITag[];
   private operatorsList: IOperator[];
-  private tagValues: ITagValue[];
+  private tagValues: string[];
 
-  @Input('tags') set tags(tags: ITag[]) {
-    this.tagList = tags.slice();
-    this.filteredTagList = tags.slice();
+  @Input() set tags(tags: ITag[]) {
+    this.tagList = tags ? tags.slice(): [];
+    this.filteredTagList = tags ? tags.slice(): [];
   };
 
   get tags(): ITag[] {
     return this.tagList;
   }
 
-  @Input('operators') set operators(operators: IOperator[]) {
+  @Input() set operators(operators: IOperator[]) {
     this.operatorsList = operators;
     this.filteredOperatorsList = operators;
   };
@@ -57,10 +57,9 @@ export class AppSearchTermBuilder implements OnChanges {
   }
 
   ngOnChanges() {
-    debugger;
     if (this.isEdit) {
       this.cloneData();
-      this.getTagValue(this.searchData.tag.TagID);
+      this.getTagValue(this.searchData.tag.tagID);
     }
   }
 
@@ -72,7 +71,7 @@ export class AppSearchTermBuilder implements OnChanges {
     if (!tag) {
       return;
     }
-    this.getTagValue(tag.TagID);
+    this.getTagValue(tag.tagID);
   }
 
   /**
@@ -98,7 +97,7 @@ export class AppSearchTermBuilder implements OnChanges {
    * @param value
    */
   public handleTagFilter(value) {
-    this.filteredTagList = this.tags.filter((tag) => tag.TagName.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+    this.filteredTagList = this.tags.filter((tag) => tag.tagName.toLowerCase().indexOf(value.toLowerCase()) !== -1);
   }
 
   /**
@@ -114,7 +113,7 @@ export class AppSearchTermBuilder implements OnChanges {
    * @param value
    */
   public handleTagValueFilter(value) {
-    this.filteredTagValueList = this.tagValues.filter((tagValue) => tagValue.Value.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+    this.filteredTagValueList = this.tagValues.filter((tagValue) => tagValue.toLowerCase().indexOf(value.toLowerCase()) !== -1);
   }
 
   /**

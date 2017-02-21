@@ -3,11 +3,11 @@ import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import {ITag, ITagValue, IOperator} from "../shared/app-search-model";
+import {ITag, IOperator} from "../shared/app-search-model";
 
 export interface ISearchService {
   getTags(): Observable<ITag[]>;
-  getTagValue(id: number): Observable<ITagValue[]>;
+  getTagValue(id: number): Observable<string[]>;
   getOperators(): Observable<IOperator[]>;
 }
 
@@ -19,23 +19,23 @@ export interface ISearchService {
 export class SearchService implements ISearchService {
 
   public getTagsUrl: string;
-  public getTagUrl: string;
+  public getTagValueUrl: string;
   private apiEndpoint: string;
 
   constructor(private http: Http) {
-    this.apiEndpoint = 'http://localhost:3334';
+    this.apiEndpoint = 'http://10.101.15.169:3334';
     this.getTagsUrl = `${this.apiEndpoint}/tags`;
-    this.getTagUrl = `${this.apiEndpoint}/tag`;
+    this.getTagValueUrl = `${this.apiEndpoint}/tags`;
   }
 
 
   public getTags(): Observable<ITag[]> {
-    return this.http.get(this.getTagsUrl).map((res: Response) => res.json().Tags)
+    return this.http.get(this.getTagsUrl).map((res: Response) => res.json().tags)
   }
 
-  public getTagValue(id: number): Observable<ITagValue[]> {
-    return this.http.get(`${this.getTagUrl}/${id}`)
-      .map((res: Response) => res.json().Values)
+  public getTagValue(id: number): Observable<string[]> {
+    return this.http.get(`${this.getTagValueUrl}/${id}/values`)
+      .map((res: Response) => res.json().tagValues)
   }
 
   public getOperators(): Observable<IOperator[]> {

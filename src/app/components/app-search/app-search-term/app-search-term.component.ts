@@ -4,7 +4,8 @@ import {ISearchTerm} from "../shared/app-search-model";
 @Component({
   moduleId: module.id,
   selector: 'app-search-term',
-  templateUrl: './app-search-term.component.html'
+  templateUrl: './app-search-term.component.html',
+  styleUrls: ['./app-search-term.component.scss']
 })
 export class AppSearchTerm implements OnInit,OnChanges {
 

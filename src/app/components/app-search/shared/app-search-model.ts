@@ -1,18 +1,15 @@
 export interface ITag {
-  TagID: number;
-  TagName: string;
-  CategoryID: number;
-  CategoryName: string;
-  TagType: string;
-  TagTypeID: number;
-  TagDataType: string;
-  TagDataTypeID: number;
-  TagUnit: string;
-  TagUnitID: number;
-}
-
-export interface ITagValue {
-  Value: string
+  tagID: number,
+  tagName: string,
+  tagDisplayName:string,
+  categoryID: number,
+  categoryName: string,
+  tagType: string,
+  tagTypeID: number,
+  tagDataType: string,
+  tagDataTypeID: number,
+  tagUnit:string,
+  tagUnitID: number
 }
 
 export interface IOperator {
@@ -23,7 +20,7 @@ export interface IOperator {
 export interface ISearchTerm {
   tag: ITag,
   operator: IOperator,
-  value: ITagValue,
+  value: string,
   logicalOperator: IOperator,
   index?: number
 }
